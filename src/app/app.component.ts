@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {Todo} from './todo';
-// Import class so we can register it as dependency injection token
 import {TodoDataService} from './todo-data.service';
 
 @Component({
@@ -9,24 +8,24 @@ import {TodoDataService} from './todo-data.service';
   styleUrls: ['./app.component.css'],
   providers: [TodoDataService]
 })
+
 export class AppComponent {
-  // newTodo: Todo = new Todo();
-  
+
+  newTodo: Todo = new Todo();
+
   constructor(private todoDataService: TodoDataService) {
   }
-  // addTodo() {
-  //   this.todoDataService.addTodo(this.newTodo);
-  //   this.newTodo = new Todo();
-  // }
+  
   onAddTodo(todo: Todo) {
     this.todoDataService.addTodo(todo);
+    this.newTodo = new Todo();
   }
-  // Service is now available as this.todoDataService
-  onToggleTodoComplete(todo) {
+  
+  onToggleTodoComplete(todo: Todo) {
     this.todoDataService.toggleTodoComplete(todo);
   }
 
-  onRemoveTodo(todo) {
+  onRemoveTodo(todo: Todo) {
     this.todoDataService.deleteTodoById(todo.id);
   }
 

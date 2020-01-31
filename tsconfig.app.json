@@ -14,5 +14,11 @@
   "exclude": [
     "src/test.ts",
     "src/**/*.spec.ts"
-  ]
+  ],
+  "environments": {
+    "dev": "environments/environment.ts",
+    "staging": "environments/environment.staging.ts",
+    "prod": "environments/environment.prod.ts"
+  }
+  
 }
